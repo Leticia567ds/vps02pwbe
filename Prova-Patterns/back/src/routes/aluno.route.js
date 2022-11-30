@@ -3,9 +3,10 @@ const router = express.Router();
 
 const alunos = require ('../controllers/aluno.controller')
 
-router.get('/read', alunos.readAll)
+router.get('/read', alunos.read)
 router.post('/create', alunos.create)
 router.put('/alterar', alunos.update)
 router.delete('/del', alunos.del)
+
 
 module.exports = router;

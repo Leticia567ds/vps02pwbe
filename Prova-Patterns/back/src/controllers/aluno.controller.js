@@ -1,7 +1,8 @@
 const aluno = require('../models/aluno.model')
 const con = require('../dao/connection')
 
-const readAll = (req, res ) => {
+
+const read = (req, res ) => {
     con.query(aluno.toreadAll(), (err, result) => {
         if(err == null) {
             res.json(result).end()
@@ -46,7 +47,7 @@ const del = (req, res) => {
 }
 
 module.exports = {
-    readAll,
+    read,
     create,
     update,
     del

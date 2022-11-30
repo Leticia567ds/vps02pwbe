@@ -52,6 +52,14 @@ select * from alunos;
 select * from curso;
 select * from cursados;
 
+
+create view vw_tudo as
+select a.id_aluno, a.nome, a.nascimento, c.id_curso, c.curso, c.duracao, c1.data
+from alunos a inner join cursados c1 on a.id_aluno = c1.id_alunos
+inner join curso c on c.id_curso = c1.id_curso;
+
+select * from vw_tudo;
+
  INSERT INTO alunos VALUES (default, 'Maria de Pedro', '30/11/2022');
  UPDATE alunos SET nome = 'Renan Pedro', nascimento = '21/08/1985' where id = 5;
  
